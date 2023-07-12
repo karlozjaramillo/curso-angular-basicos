@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
+import { DbzService } from '../services/dbz.service';
 
 @Component({
   selector: 'app-main-page',
@@ -24,7 +25,8 @@ export class MainPageComponent {
   };
 
   agregarNuevoPersonaje(event: Personaje) {
-    // console.log('Main page component');
     this.personajes.push(event);
   }
+
+  constructor(private dbzService: DbzService) {}
 }
