@@ -11,8 +11,8 @@ export class AgregarComponent {
     poder: 0,
   };
 
-  // @Output() onNuevoPersonaje: EventEmitter<Personaje> = new EventEmitter();
-  @Output() onNuevoPersonaje = new EventEmitter<Personaje>();
+  @Output() onNuevoPersonaje: EventEmitter<Personaje> = new EventEmitter();
+  // @Output() onNuevoPersonaje = new EventEmitter<Personaje>();
 
   agregar() {
     if (this.personaje.nombre.trim().length === 0) {
