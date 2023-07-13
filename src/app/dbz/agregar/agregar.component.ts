@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
 import { DbzService } from '../services/dbz.service';
 
@@ -14,14 +14,10 @@ export class AgregarComponent {
 
   constructor(private dbzService: DbzService) {}
 
-  // @Output() onNuevoPersonaje: EventEmitter<Personaje> = new EventEmitter();
-  // @Output() onNuevoPersonaje = new EventEmitter<Personaje>();
-
   agregar() {
     if (this.personaje.nombre.trim().length === 0) {
       return;
     }
-    // this.onNuevoPersonaje.emit(this.personaje);
 
     this.dbzService.agregarPersonaje(this.personaje);
 
